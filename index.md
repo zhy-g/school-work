@@ -135,10 +135,10 @@
 
 * 插入照片
 
-![VSC](img\VSC.JPG)
+![VSC](img\VSC.jpg)
 
 ~~~
-![VSC](img\VSC.JPG)
+![VSC](img\VSC.jpg)
 ~~~
 
 MarkDown编辑工具推荐:
