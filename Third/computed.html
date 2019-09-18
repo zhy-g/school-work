@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>computed</title>
+    <style>
+         table,th,tr,td{
+            border:1px solid #000;
+            border-collapse:collapse;
+            width: 20%;
+            margin:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table boder="1">
+            <thead >
+                    <th>科目</th>
+                    <th>分数</th>
+            </thead>
+            <tbody>
+             <tr>
+                    <td>数学</td>
+                    <td><input type="text" v-model.number="math"></td>
+                </tr>
+            <tr>
+                <td>语文</td>
+                <td><input type="text" v-model.number="Chinese"></td>
+            </tr>
+            <tr>
+                <td>英语</td>
+                <td><input type="text" v-model.number="English"> </td>
+            </tr>
+            <tr>
+                <td>总分</td>
+                <td> {{sum}} </td>
+            </tr>
+            <tr>
+                <td>平均分</td>
+                <td> {{ average }} </td>
+            </tr>
+        </tbody>
+        </label>
+        <!-- <table boder="1">
+            <thead >
+                    <th>科目</th>
+                    <th>分数</th>
+            </thead>
+            <tbody>
+             <tr>
+                    <td>数学</td>
+                    <td>{{ math }}</td>
+                </tr>
+            <tr>
+                <td>语文</td>
+                <td>{{ Chinese }} </td>
+            </tr>
+            <tr>
+                <td>英语</td>
+                <td> {{English}} </td>
+            </tr>
+            <tr>
+                <td>总分</td>
+                <td> {{math + Chinese + English}} </td>
+            </tr>
+            <tr>
+                <td>平均分</td>
+                <td> {{ Math.round((math + Chinese + English) / 3)}} </td>
+            </tr>
+        </tbody>
+        </label> -->
+
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/computed.js"></script>
+</body>
+</html>

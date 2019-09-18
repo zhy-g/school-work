@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if</title>
+</head>
+<body>
+    <div id="vif">
+        请输入您的用户名：<input type="text" v-model="nameList" >
+        <div v-if="nameList == 'admin' ">   
+            <br>{{ content3 }}
+        </div>
+            
+        <div v-else-if="nameList ==  &apos;123&apos;">{{ content }}</div>
+        <div v-else-if="nameList ==  'Holmes'"> {{ content1 }}</div>
+        <div v-else>{{ content2 }}</div>
+        <!-- <select>
+            <option value="1"></option>
+        </select> -->
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/v-if.js"></script>
+</body>
+</html>

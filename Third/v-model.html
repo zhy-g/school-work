@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model</title>
+</head>
+<body>
+    <div id="model"> 
+        <select v-model="message">
+            <option value="1">计算机组成</option>
+            <option value="2">JavaScipt</option>
+            <option value="3">C#</option>
+            <option value="4">Vue</option>
+            <option value="5">Java</option>
+        <!-- <select v-model="message" multiple>
+            <option value="1">计算机组成</option>
+            <option value="2">JavaScipt</option>
+            <option value="3">C#</option>
+            <option value="4">Vue</option>
+            <option value="5">Java</option>
+        </select> -->
+        </select>
+        <br>
+        <p>
+       <textarea v-model="content" min-cols="5" min-rows="1"></textarea>
+        </p>
+        <label>
+            <input type="radio" value="馒头" v-model="food">馒头
+            <input type="radio" value="面包" v-model="food">面包
+        </label>
+        <label>
+            <input type="checkbox" value="小馒头" v-model="foodList">小馒头
+            <input type="checkbox" value="过桥米线" v-model="foodList">过桥米线
+            <input type="checkbox" value="可乐" v-model="foodList">可乐
+            <input type="checkbox" value="奶茶" v-model="foodList">奶茶
+        </label>
+        <div v-if="foodList == '可乐'">这个蛮好吃的</div>
+        <div v-else-if="foodList == '' ">请选择</div>
+        <div v-else>都很好吃</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/v-model.js"></script>
+</body>
+</html>
