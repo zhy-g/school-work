@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue 插槽</title>
+
+</head>
+<body>
+    <div id="app">
+        <panel>
+            <div slot="title">
+                vue这是标题栏目
+            </div>
+            <div slot="content">
+                你很真棒
+            </div>
+        </panel>
+        <panel>每日日常之夸夸自己</panel>
+        <panel>
+            <div slot="title">
+                夸夸自己会让自己度过美好的一天
+            </div>
+            <div slot="content">
+                夸夸自己会让自己变得开心
+            </div>
+
+        </panel>
+    </div>
+
+    <template id="panel-tp1">
+        <div class="panel">
+            <div class="title">
+                <slot name="title"></slot>
+            </div>
+            <div class="content">
+                <slot name="content"></slot>
+            </div>
+            <div class="footer">more>></div>
+        </div>
+    </template>
+    
+    <script src="js/vue.js"></script>
+    <script src="slots.js"></script>
+</body>
+</html>

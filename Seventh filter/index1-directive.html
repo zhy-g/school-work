@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义指令</title>
+</head>
+<body>
+    <div id="app">
+        <div v-pin:true,button.right="card1.pinned">
+            <button @click="card1.pinned = !card1.pinned">
+                钉住/取消
+            </button>
+            如果运算复杂可以考虑计算属性，计算属性带缓存
+        </div>
+        <div v-pin="card2.pinned" class="card">
+            <a @click="card2.pinned = !card2.pinned" href="#">如果</a>
+        </div>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/directive.js"></script>
+
+</body>
+</html>
