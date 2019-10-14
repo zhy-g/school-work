@@ -3,19 +3,46 @@
     function copy(obj){
         return Object.assign({},obj);
     }
+    Vue.component('task', {
+        template:'#task-tp1',
+        props:['todo'],
+        methods:{
+            action: function(name,params){
+                Event.$emit(name,params);
+            }
+        }
+    })
 
     new Vue({
         el:'#main',
         data:{
             list:[],
             current:{},
-            last_id:0,
+            last_id:0,//默认ID值为0
         },
         mounted: function(){
+            var me = this;
             this.list = msg.get('list') || this.list;
             this.list = msg.get('last_id') || this.last_id;
-        },
 
+            Event,$on('toggle_remove', function(id){
+                if(id){
+                    me.remove(id);
+                }
+            })
+      
+        Event.$on('toggle_complete', function(id){
+            if(id){
+                me.remove(id);
+            }
+        });
+
+        Event.$on('set_current', function(id){
+            if(id){
+                me.set_current(id);
+            }
+        })
+  },
         methods:{
             add:function(){
                 var is_update,id;
@@ -63,10 +90,12 @@
                     
                 })
                 console.log('this.list :', this.list);
+            },
+            toggle_completed: function(){
+                var i = this.find_index(id);
+                Vue.set(this.list[i], 'completed', !this,list[i].complete);
+                this.list[i].complete = !this.list[i].complete;
             }
-            // toggle_completed: function(){
-            //     var i = 
-            // }
         },
         watch:{
             list:{
