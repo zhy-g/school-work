@@ -1,0 +1,19 @@
+#main{
+    background: linear-gradient(top, #fff,  #0000ff);
+}
+
+.navbar,.header{
+    text-align: center;
+}
+
+.navbar{
+    background: #eee;
+    position: relative;
+}
+form{
+    margin-top: 20px;
+    margin-left:40%;
+}
+.task-list{
+    margin-left: 40%;
+}
