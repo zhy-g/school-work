@@ -55,4 +55,24 @@ el： abbr.element 要素；原理
 
 template： n.模板；样板
 
-toggle: 
+toggle: n.开关；切换键 
+
+current: adj.当前的，通用的，现时的
+
+flow: n.流
+
+event: n.事件
+
+object: n.对象
+
+assign: v.分配，分派
+
+task: n.任务
+
+props: n.支撑
+
+action: n.行动，行为，事情，举动
+
+params: n.参数(param的复数)
+
+emit: v.排放,散发，发出
