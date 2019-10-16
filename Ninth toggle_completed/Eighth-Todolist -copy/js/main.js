@@ -95,7 +95,24 @@
                 var i = this.find_index(id);
                 Vue.set(this.list[i], 'completed', !this,list[i].complete);
                 this.list[i].complete = !this.list[i].complete;
-            }
+             },
+             check_alert: function(){
+                 var me = this;
+                 this.list.forEach(function(row, i) {
+                     
+                    var alert_at = row.alert_at;
+                    if(!alert_at || row.alert_confirmed ) return;
+                    
+                    var alert_at = (new Date(alert_at)).getTime();
+                    var now = (new Date()).getTime();
+                    if( now >= alert_at){
+                        alert_sound.play();
+                        var confirmed = confirm(row.title);
+                        Vue.set(me.list[i],'alert_confirmed', confirmed);
+                    }
+                 });
+             }
+        
         },
         watch:{
             list:{

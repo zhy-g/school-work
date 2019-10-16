@@ -11,48 +11,55 @@
 <body>
     <div id="main">
         <div class="navbar">
-            <h1>任务列表:</h1>
+            <h1>任务列表：</h1>
         </div>
         <div class="header">
-            作业写了没，还在开黑?
+            <h2>作业写了没，还在开黑？</h2>
         </div>
-        <form @submit.prevent="add" id="task-form">
+        <form @submit.pervent='add' id="task-form">
             <div class="wrap">
-                <input type="text" class="task-input" autocomplete="off" v-model="current.title">
+                <input type="text" v-model='current.title' class="task-input" autocomplete="off">
+
                 <div class="detail">
-                    <textarea v-model="current.desc"></textarea>
+                    <textarea v-model="current.desc">
+
+                    </textarea>
+
+                    <input v-model="current.alert_at" type="datetime-local">
                 </div>
+
                 <button type="submit">提交</button>
             </div>
         </form>
-        <div class="task-list">
+        <div class="task-li">
             <div class="wrap">
                 未完成：
                 <task :todo="todo"
-                    v-if="!todo.completed"
-                    v-for="(todo, index) in list"
-                    >
-
-                </task>
-            </div>
-            <div class="task-list">
-                <div class="wrap">
-                    已完成：
-
-                    <task :tod="todo"
-                        v-if="todo.completed"
-                        v-for="(todo, index) in list"
-                    ></task>
-                </div>
+                        v-if="!todo.completed"
+                        v-for="(todo,index) in list"
+                ></task>
             </div>
         </div>
+        <div class="task-list">
+                <div class="wrap">
+                    <div v-if="todo.completed" v-for="(todo, index) in list" class="item completed">
+                        <button @click='remove(todo.id)'>删除</button>
+                        <button @click='set_current(todo)'>更新</button>
+                    </div >
+                </div>
+            
+        </div>
     </div>
+
+    <audio controls id="alert_sound">
+        <source src="lib/echo.mp3">
+    </audio>
     <template id="task-tp1">
         <div class="item">
-            <button @click="action('toggle_complete', todo.id)">未完成</button>
+            <button @click="action('toggle_complete', todo.id)">完成</button>
             {{ todo.title }}
-            <button @click="action('remove', todo.id)">删除</button>
-            <button @click="action('set_current', todo)">更新</button>
+            <button @click="action('remove', todo.id)">删除 </button>
+            <button @click='action("set_current",todo)'>更新</button>
         </div>
     </template>
     
