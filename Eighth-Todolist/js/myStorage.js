@@ -14,4 +14,10 @@
             return JSON.parse(json);
         }
     }
+   
 })();
+
+
+
+// 总结：
+// JSON.parse() //从一个字符串中解析出JSON对象
