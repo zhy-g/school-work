@@ -93,8 +93,6 @@ compatible  n.兼容机；兼容性计算机
 
 edge n.边，边线，边缘
 
-input: n.放入物；带入物体；投入 v.输入
-
 prevent: v.妨碍；制止；阻止；阻挡
 
 submit: v.屈服；服从；归顺；提交；认为
@@ -126,3 +124,18 @@ JSON:  是一种轻量级的数据交换格式。
       *  JSON键值对是用来保存JS对象的一种方式，和JS对象的写法也大同小异，键/值对组合中的键名写在前面并用杜昂引号""包裹，使用冒号 ： 分隔，然后紧接着值：
 
 arg = (argument)自变量
+
+received: v.接收；收到(receive的过去式和过去分词))
+
+connection: n.联系；关系
+
+input: n.放入物；带入物体；投入 v.输入
+
+output: n.产量；输出端；输出；生产
+
+I/O: input/output缩写
+
+plain: adv.就是；完全地；明白地； 
+      adj.明白的；明显的；
+
+server: n.计算机网络服务器；
